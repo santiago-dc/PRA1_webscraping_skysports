@@ -1,8 +1,0 @@
-parser.py: fichero que convierte el archivo html de entrada y genera ficheros con las tablas como salida.
-fetcher.py: toma como entrada una url y genera un html como salida.
-01.txt: archivo con url como semilla para iniciar el scraping.
-fetcher.conf y parser.conf: ficheros utilizados como condición de parada en ejeción en paralelo.
-fetcher-explored: directorio de archivos html de las url que ya ha explorado el fetcher.
-fetcher-queue: directorio de archivos con las url que aún no ha descargado el fetcher.
-parser-queue: directorio de archivos html de las url de los que aún no se han extraido las tablas.
-output: directorio en el que se almacenan las tablas extraidad por el parser.
