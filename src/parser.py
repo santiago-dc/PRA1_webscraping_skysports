@@ -7,10 +7,10 @@ running = True
 def to_filename(s):# función para convertir las url en nombres de archivo
     return s.replace('-', '--').replace('/','-')
 
-def get_table(table, output_file):#función para extraer las tablas del archivo con el contenido html. Parametros: tabla a extraer y archivo donde se va escribir 
+def get_table(table, output_file, competition):#función para extraer las tablas del archivo con el contenido html. Parametros: tabla a extraer y archivo donde se va escribir 
     for team in table.find_all('tbody'):
         rows = team.find_all('tr')
-        for row in rows:#estraemos los campos de la tabla
+        for row in rows:#extraemos los campos de la tabla
             pl_team = row.find('td', class_ = 'standing-table__cell standing-table__cell--name').text.strip()
             pl_pi = row.find_all('td', class_= 'standing-table__cell')[2].text        
             pl_w = row.find_all('td', class_= 'standing-table__cell')[3].text
@@ -20,7 +20,7 @@ def get_table(table, output_file):#función para extraer las tablas del archivo 
             pl_a = row.find_all('td', class_= 'standing-table__cell')[7].text
             pl_gd = row.find_all('td', class_= 'standing-table__cell')[8].text
             pl_pts = row.find_all('td', class_= 'standing-table__cell')[9].text
-            output_file.write('{},{},{},{},{},{},{},{},{}\n'.format(pl_team,pl_pi,pl_w,pl_d,pl_l,pl_f,pl_a,pl_gd,pl_pts))
+            output_file.write('{},{},{},{},{},{},{},{},{},{}\n'.format(competition,pl_team,pl_pi,pl_w,pl_d,pl_l,pl_f,pl_a,pl_gd,pl_pts))
             
 
 while running:
@@ -42,8 +42,7 @@ while running:
             
             with open('output/'+item,'w') as output_file:#abrimos el archivo donde va a ir la tabla final
                 for t in tables:
-                    output_file.write(t.find('caption').string+'\n')
-                    get_table(t, output_file)# llamamos al método que extrae las tablas y las escribe en el fichero
+                    get_table(t, output_file, t.find('caption').string.strip())# llamamos al método que extrae las tablas y las escribe en el fichero
 
             
         else:
