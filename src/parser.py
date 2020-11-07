@@ -9,17 +9,17 @@ def to_filename(s):# función para convertir las url en nombres de archivo
 
 def get_table(table, output_file, competition):#función para extraer las tablas del archivo con el contenido html. Parametros: tabla a extraer y archivo donde se va escribir 
     for team in table.find_all('tbody'):
-        rows = team.find_all('tr')
+        rows = team.find_all('tr') # las filas de cada tabla llevan la cabecera tr
         for row in rows:#extraemos los campos de la tabla
-            pl_team = row.find('td', class_ = 'standing-table__cell standing-table__cell--name').text.strip()
-            pl_pi = row.find_all('td', class_= 'standing-table__cell')[2].text        
-            pl_w = row.find_all('td', class_= 'standing-table__cell')[3].text
-            pl_d = row.find_all('td', class_= 'standing-table__cell')[4].text
-            pl_l = row.find_all('td', class_= 'standing-table__cell')[5].text
-            pl_f = row.find_all('td', class_= 'standing-table__cell')[6].text
-            pl_a = row.find_all('td', class_= 'standing-table__cell')[7].text
-            pl_gd = row.find_all('td', class_= 'standing-table__cell')[8].text
-            pl_pts = row.find_all('td', class_= 'standing-table__cell')[9].text
+            pl_team = row.find('td', class_ = 'standing-table__cell standing-table__cell--name').text.strip() #nombre del equipo de futbol
+            pl_pi = row.find_all('td', class_= 'standing-table__cell')[2].text #texto de los partidos jugados
+            pl_w = row.find_all('td', class_= 'standing-table__cell')[3].text  #texto de los partidos ganados
+            pl_d = row.find_all('td', class_= 'standing-table__cell')[4].text  #texto de los partidos empatados
+            pl_l = row.find_all('td', class_= 'standing-table__cell')[5].text  #texto de los partidos perdidos
+            pl_f = row.find_all('td', class_= 'standing-table__cell')[6].text  #texto de los goles a favor
+            pl_a = row.find_all('td', class_= 'standing-table__cell')[7].text  #texto de los goles en contra
+            pl_gd = row.find_all('td', class_= 'standing-table__cell')[8].text #texto de la diferencia de goles
+            pl_pts = row.find_all('td', class_= 'standing-table__cell')[9].text #texto de los puntos que lleva cada equipo
             output_file.write('{},{},{},{},{},{},{},{},{},{}\n'.format(competition,pl_team,pl_pi,pl_w,pl_d,pl_l,pl_f,pl_a,pl_gd,pl_pts))
             
 
