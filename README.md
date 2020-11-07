@@ -1,5 +1,7 @@
 # PRA1_webscraping_skysports
 
+![Resultados de los equipos de futbol en diversas competiciones](dataset/representacion_grafica.png)
+
 ## Arquitectura del proyecto:
 
 * parser.py: fichero que convierte el archivo html de entrada y genera ficheros con las tablas como salida.
