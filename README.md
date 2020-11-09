@@ -7,6 +7,10 @@ Iván Calvo Revelo
 
 Santiago Domínguez Collado
 
+## DOI del dataset
+
+doi:10.5281/zenodo.4260611
+
 ## Arquitectura del proyecto:
 
 * parser.py: fichero que convierte el archivo html de entrada y genera ficheros con las tablas como salida.
