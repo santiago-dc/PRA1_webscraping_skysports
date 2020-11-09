@@ -21,10 +21,10 @@ Creative Commons Attribution 4.0 International Public License
 * fetcher.py: toma como entrada una url y genera un html como salida.
 * 01.txt: archivo con url como semilla para iniciar el scraping.
 * fetcher.conf y parser.conf: ficheros utilizados como condición de parada en ejeción en paralelo.
-* fetcher-explored: directorio de archivos html de las url que ya ha explorado el fetcher.
-* fetcher-queue: directorio de archivos con las url que aún no ha descargado el fetcher.
-* parser-queue: directorio de archivos html de las url de los que aún no se han extraido las tablas.
-* output: directorio en el que se almacenan las tablas extraidad por el parser.
+* fetcher-explored: directorio de archivos html de las url que ya ha explorado el fetcher. (crear si no está)
+* fetcher-queue: directorio de archivos con las url que aún no ha descargado el fetcher. (crear si no está)
+* parser-queue: directorio de archivos html de las url de los que aún no se han extraido las tablas. (crear si no está)
+* output: directorio en el que se almacenan las tablas extraidad por el parser. (crear si no está)
 
 ## Instrucciones:
 
